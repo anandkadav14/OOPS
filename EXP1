@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class area
+{
+    public:
+    void calculatearea(int rad)
+    {
+        cout<<"area of circle is:"<<3.14*rad*rad<<endl;
+    }
+    void calculatearea(int base,int height)
+{
+    cout<<"area of triangle is:"<<0.5*height*base<<endl;
+}
+};
+int main()
+{
+    area a1;
+    a1.calculatearea(3);
+    a1.calculatearea(3,4);
+    return 0;
+}
