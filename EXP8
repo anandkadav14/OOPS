@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int dividend;
+    int divisor;
+    cout<<"Enter dividend : ";
+    cin>>dividend;
+    cout<<"Enter divisor  :";
+    cin>>divisor;
+    try{
+        if(divisor == 0){
+            throw "Divide by zero exception";
+        }
+        int quotient = dividend/divisor;
+        cout<<"Quotient = "<<quotient<<endl;
+    }
+    catch(const char* msg){
+        cerr<<msg<<endl;
+    }
+    return 0;
+}
