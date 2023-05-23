@@ -1,0 +1,50 @@
+class calculator:
+    def add(self,a,b):
+        return a+b
+        
+    def sub(self,a,b):
+        return a-b
+        
+    def mul(self,a,b):
+        return a*b
+        
+    def div(self,a,b):
+        return a/b
+        
+#create a calculator object
+my_c1=calculator()
+
+while True:
+    
+    print("1:Add")
+    print("2:Subtract")
+    print("3:Multiply")
+    print("4:Divide")
+    print("5:Exit")
+    
+    ch=int(input("select operation:"))
+    
+    #make sure the user have entered the valid
+    if ch in (1,2,3,4,5):
+        
+        #first check wheather user want to Exit
+        if (ch==5):
+            break
+        #if not the ask for the input and call appropriate methods
+        a=int(input("Enter First Number:"))
+        b=int(input("Enter Second Number:"))
+        
+        if (ch==1):
+            print(a,"+",b,"=",my_c1.add(a,b))
+            
+        elif (ch==2):
+            print(a,"-",b,"=",my_c1.sub(a,b))  
+            
+        elif (ch==3):
+            print(a,"*",b,"=",my_c1.mul(a,b)) 
+            
+        elif (ch==1):
+            print(a,"/",b,"=",my_c1.div(a,b))  
+            
+    else:     
+        print("Invalid Input")
