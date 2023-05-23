@@ -1,0 +1,52 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <stdio.h>
+#include<string.h>
+using namespace std;
+	
+class stu{
+    private :
+    char name[20],add[20];
+    int roll,zip;
+    
+    public:
+    stu();
+    ~stu();
+    void read();
+    void disp();
+};
+stu::stu()
+{
+    cout<<"\n This is Student Details Constructor-----"<<endl;
+}
+void stu::read()
+{
+    cout<<"\nEnter student Name::";
+    cin>>name;
+    cout<<"\nEnter student Roll NO.::";
+    cin>>roll;
+    cout<<"\nEnter student Address::";
+    cin>>add;
+    cout<<"\nEnter the Zipcode::";
+    cin>>zip;
+}
+void stu::disp()
+{
+    cout<<"\nThe Entered student Details are show below ::------";
+    cout<<"\nStudent Name ::"<<name<<endl;
+    cout<<"\nRoll no. is::"<<roll<<endl;
+    cout<<"\nAddress is ::"<<add<<endl;
+    cout<<"\nZipcode ::"<<zip;
+}
+stu::~stu()
+{
+    cout<<"\nStudent Detailed is Closed.........\n";
+    
+}
+int main()
+{
+    stu s;
+    s.read();
+    s.disp();
+    return 0;
+}
