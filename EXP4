@@ -1,0 +1,76 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class MAT
+{
+    int a[2][2];
+    public:
+     void accept()
+     {
+         cout<<"\n\nEnter 4 element:";
+         for(int i=0;i<2;i++)
+         {
+             for(int j=0;j<2;j++)
+                cin>>a[i][j];
+         }
+     }
+     void display()
+     {
+         for(int i=0;i<2;i++)
+         {
+             cout<<endl;
+             for(int j=0;j<2;j++)
+             cout<<" "<<a[i][j];
+         }
+     }
+     MAT operator+(MAT M2)
+     {
+         MAT M3;
+         for(int i=0;i<2;i++)
+         {
+             for(int j=0;j<2;j++)
+             {
+                 M3.a[i][j]=a[i][j]+M2.a[i][j];
+             }
+         }
+         return M3;
+     }
+     MAT operator*(MAT M2)
+     {
+         MAT M3;
+         for(int i=0;i<2;i++)
+         {
+             for(int j=0;j<2;j++)
+             {
+                 M3.a[i][j]=0;
+                 for(int k=0;k<2;k++)
+                 {
+                     M3.a[i][j]=a[i][k]*M2.a[k][j]+M3.a[i][j];
+                 }
+             }
+         }
+         return M3;
+     }
+};
+
+int main() 
+{
+    MAT M1,M2,M3;
+    
+    cout<<"\n\nEnter Matrix M1 value:";
+    M1.accept();
+    
+    cout<<"\n\nEnter Matrix M2 value:";
+    M2.accept();
+    
+    M3= M1*M2;
+    cout<<"\n\nAddition of  M1+M2:";
+    M2.display();
+    
+    M3=M1+M2;
+    cout<<"\n\n Multiplication of M1*M2:";
+    M3.display();
+    
+    return 0;
+}
